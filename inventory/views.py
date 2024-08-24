@@ -14,7 +14,7 @@ class ListIngredient(ListView):
 
 class CreateIngredient(CreateView):
     model = Ingredient
-    template_name = 'inventory/ingredient_create.html'
+    template_name = 'inventory/add_ingredient.html'
     form_class = IngredientForm
 
 class UpdateIngredient(UpdateView):
