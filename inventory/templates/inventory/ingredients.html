@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Adams{% endblock %}
+{% block content %}
+  <div>
+    <h2>Ingredients</h2>
+    <table class="ingredient-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for ingredient in object_list %}
+        <tr>
+          <td>
+            <a href="{% url "update_ingredient" ingredient.id %}">{{ ingredient.name }}</a>
+          </td>
+          <td><a href="{% url "delete_ingredient" ingredient.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "create_ingredient" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: inherit; padding: 4px; background-color: lightgreen;">➕</a>
+  </div>
+{% endblock %}

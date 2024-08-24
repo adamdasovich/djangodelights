@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Adam's{% endblock %} {% block content %}
+<div class="home">
+  <div>
+    <h2>Ingredients</h2>
+    <table class="line-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ingredient in ingredints %}
+        <tr>
+          <td>{{ ingredient.name }}</td>         
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
