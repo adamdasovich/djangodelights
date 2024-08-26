@@ -17,6 +17,10 @@ class MenuItem(models.Model):
     name = models.CharField(max_length=30)
     price = models.FloatField()
 
+    def get_absolute_url(self):
+        return '/menu/list'
+    
+
 
 class RecipeRequirement(models.Model):
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
