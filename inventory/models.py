@@ -8,6 +8,10 @@ class Ingredient(models.Model):
     unit = models.CharField(max_length=15)
     unit_price = models.FloatField()
 
+    def get_absolute_url(self):
+        return '/ingredient/list'
+    
+
 
 class MenuItem(models.Model):
     name = models.CharField(max_length=30)

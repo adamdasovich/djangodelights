@@ -6,7 +6,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'routes/style.css' %}"
+      href="{% static 'inventory/style.css' %}"
     />
   
     <title>{% block title %}Adam's{% endblock %}</title>
@@ -20,7 +20,7 @@
         </div>
         <nav class="navbar">
           <a class="nav-item" href="{% url 'home' %}">Home</a>
-          <a class="nav-item" href="{% url 'ingredients' %}">Ingredients</a>                   
+          <a class="nav-item" href="{% url 'ingredientlist' %}">Ingredients</a>                   
         </nav>
       </header>
       <main>{% block content %}{% endblock %}</main>

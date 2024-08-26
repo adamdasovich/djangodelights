@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('ingredients/', views.ListIngredient.as_view(), name='ingredients'),
-    path('ingredients/new/', views.CreateIngredient.as_view(), name='create_ingredient'),
-    path('ingredients/<pk>/update/', views.UpdateIngredient.as_view(), name='update_ingredient'),
-    path('ingredients/<pk>/delete/', views.DeleteIngredient.as_view(), name='delete_ingredient'),
+    path('ingredient/list/', views.IngredientList.as_view(), name='ingredientlist'),
+    path('ingredient/new/', views.IngredientCreate.as_view(), name='ingredientcreate'),
+    path('ingredient/<pk>/update/', views.IngredientUpdate.as_view(), name='ingredientupdate'),
+    path('ingredient/<pk>/delete/', views.IngredientDelete.as_view(), name='ingredientdelete'),
 ]
 

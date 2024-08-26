@@ -8,21 +8,21 @@ from .forms import IngredientForm
 class HomeView(TemplateView):
     template_name = 'inventory/home.html'
 
-class ListIngredient(ListView):
+class IngredientList(ListView):
     model = Ingredient
-    template_name = 'inventory/ingredients.html'
+    template_name = 'inventory/ingredient_list.html'
 
-class CreateIngredient(CreateView):
+class IngredientCreate(CreateView):
     model = Ingredient
-    template_name = 'inventory/add_ingredient.html'
+    template_name = 'inventory/ingredient_add.html'
     form_class = IngredientForm
 
-class UpdateIngredient(UpdateView):
+class IngredientUpdate(UpdateView):
     model = Ingredient
     template_name = 'inventory/ingredient_update'
     form_class = IngredientForm
 
-class DeleteIngredient(DeleteView):
+class IngredientDelete(DeleteView):
     model = Ingredient
     template_name = 'inventory/ingridient_delete'
     form_class = IngredientForm

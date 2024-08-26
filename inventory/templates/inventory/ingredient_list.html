@@ -17,7 +17,7 @@
       {% for ingredient in object_list %}
         <tr>
           <td>
-            <a href="{% url "update_ingredient" ingredient.id %}">{{ ingredient.name }}</a>
+            <a href="{% url "ingredientupdate" ingredient.id %}">{{ ingredient.name }}</a>
           </td>
           <td>
             <p>{{ ingredient.quantity }}</p>
@@ -29,11 +29,11 @@
             <p>{{ ingredient.unit_price }}</p>
           </td>
 
-          <td><a href="{% url "delete_ingredient" ingredient.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
+          <td><a href="{% url "ingredientdelete" ingredient.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
-    <a href="{% url "create_ingredient" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: blue; padding: 4px; background-color: yellow;">➕</a>
+    <a href="{% url "ingredientcreate" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: blue; padding: 4px; background-color: yellow;">Add an Ingredient to the Inventory</a>
   </div>
 {% endblock %}
