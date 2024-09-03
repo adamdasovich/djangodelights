@@ -21,7 +21,9 @@
         <nav class="navbar">
           <a class="nav-item" href="{% url 'home' %}">Home</a>
           <a class="nav-item" href="{% url 'ingredientlist' %}">Ingredients</a>
-          <a class='nav-item' href="{% url 'menulist' %}">Menu Items</a>                   
+          <a class='nav-item' href="{% url 'menulist' %}">Menu Items</a>
+          <a class='nav-item' href="{% url 'purchaselist' %}">Purchases</a>
+          <a class='nav-item' href="{% url 'finances' %}">Finances</a>                 
         </nav>
       </header>
       <main>{% block content %}{% endblock %}</main>

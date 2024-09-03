@@ -3,32 +3,37 @@
 {% block title %}Adams{% endblock %}
 {% block content %}
   <div>
-    <h2>Menu Items</h2>
-    <table class="menu-table">
+    <h2>Purchases</h2>
+    
+    <table class="purchase-table">
       <thead>
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Time</th>
         </tr>
       </thead>
       <tbody>
-      {% for item in object_list %}
+      {% for purchase in object_list %}
         <tr>
           <td>
-            <a href="{% url "menuupdate" item.id %}">{{ item.name }}</a>
+            <p>{{ purchase.menu_item.name }}</p>
           </td>
           <td>
-            <p>{{ item.price }}</p>
+            <p>{{ purchase.menu_item.price }}</p>
           </td>
-         
-          <td><a href="{% url "menudelete" item.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
+          <td>
+            <p>{{ purchase.time_stamp }}</p>
+          </td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
+    <h2>Total income from purchases</h2>
+    <p></p>
     <a 
-      href="{% url "menucreate" %}" 
+      href="{% url "purchasecreate" %}" 
       style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: blue; padding: 4px; background-color: yellow;"
-      >Add New item to Menu</a>
+    >Add New Purchase</a>
   </div>
 {% endblock %}
