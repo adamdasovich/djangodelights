@@ -151,6 +151,7 @@ body {
   
   main form * {
     display: block;
+    border-color: red;
   }
   
   main form label {

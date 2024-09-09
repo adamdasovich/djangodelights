@@ -1,23 +1,26 @@
-{% extends "base.html" %}    
-{% load static %}    
-{% block content1 %}
-    <p style="color: aliceblue;">Financial Summary of the Restaurant</p>
-{% endblock %}
-{% block content2 %}
-    <div class="row">
-        <!--Revenue Card-->
-        <div class="card" style="margin-left: 20px; border-radius: 5px;">
-            <div class="card-body">
-                <h5 class="card-title">Revenue for the Restaurant</h5>
-                <p class="card-text">{{ revenue }}</p>
-            </div>
-        </div>
-        <!--Profit Card-->
-        <div class="card" style="margin-left: 20px; border-radius: 5px;">            
-            <div class="card-body">
-                <h5 class="card-title">Final Profit</h5>
-                <p class="card-text">{{ revenue }}</p>
-            </div>
-        </div>
-    </div>
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Finances{% endblock %}
+{% block content %}
+  <div>
+    <h2>Finance</h2>
+    
+    <table class="finance-table">
+      <thead>
+        <tr>
+          <th>Revenue</th>
+          <th>Costs</th>
+          <th>Total Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>{{ total_revenue }}</p></td>
+          <td><p>{{ total_cost }}</p></td>
+          <td><p>{{ profit }}</p></td>
+        </tr>
+      
+      </tbody>
+    </table>   
+  </div>
 {% endblock %}

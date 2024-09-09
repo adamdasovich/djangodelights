@@ -17,10 +17,10 @@
       {% for purchase in object_list %}
         <tr>
           <td>
-            <p>{{ purchase.menu_item.name }}</p>
+            <p>{{ purchase.purchased_item.name }}</p>
           </td>
           <td>
-            <p>{{ purchase.menu_item.price }}</p>
+            <p>{{ purchase.purchased_item.price }}</p>
           </td>
           <td>
             <p>{{ purchase.time_stamp }}</p>
@@ -29,8 +29,7 @@
       {% endfor %}
       </tbody>
     </table>
-    <h2>Total income from purchases</h2>
-    <p></p>
+    
     <a 
       href="{% url "purchasecreate" %}" 
       style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: blue; padding: 4px; background-color: yellow;"

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Adams{% endblock %}
+{% block content %}
+  <div>
+    <h2>Recipe Requirements</h2>
+    <table class="ingredient-table">
+      <thead>
+        <tr>
+          <th>Menu Item</th>
+          <th>Ingredient</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for recipe in reciperequirement_list %}
+        <tr>
+          <td><a href="{% url "recipeupdate" recipe.pk %}">{{ recipe.menu_item.name | title}}</a></td>
+          <td>{{ recipe.ingredient.name }}</td>
+          <td>{{ recipe.quantity }} {{ recipe.ingredient.unit}}</td>
+          <td><a href="{% url "recipedelete" recipe.pk %}" style="text-decoration: none; color: inherit;">❌</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <a 
+      href="{% url "recipecreate" %}" 
+      style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: blue; padding: 4px; background-color: yellow;"
+    >Add New Recipe Requirements</a>
+  </div>
+{% endblock %}
